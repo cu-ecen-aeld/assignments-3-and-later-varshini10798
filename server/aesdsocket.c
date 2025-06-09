@@ -442,6 +442,7 @@ int main(int argc, char *argv[])
     hints.ai_family = AF_INET; // use AF_INET6 to force IPv6
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_protocol = IPPROTO_TCP;
+    hints.ai_flags = AI_PASSIVE;
 
     if ((rv = getaddrinfo(NULL, "9000", &hints, &servinfo)) != 0) 
     {
